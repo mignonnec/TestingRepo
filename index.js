@@ -1,14 +1,13 @@
 const config = require('./config.js');
-const dateFormat = "DD/MM/YYYY HH:mm"
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport(config.EmailSettings);
 
 if (config.SendEmail) {
-    const msg = '<h3>Pakati SalesSite</h3>';
+    const msg = '<h3>This is a test app</h3>';
     const mailOptions = {
-      from: 'Pakati SalesSite <0828926369@vodamail.co.za>',
+      from: 'Test node js server <0828926369@vodamail.co.za>',
       to: 'mignonnecilliers@gmail.com',
-      subject: 'Vodacom Fibre Application!',
+      subject: 'Test nodemailer!',
       html: msg
     };
     transporter.sendMail(mailOptions, (error, info) => {
